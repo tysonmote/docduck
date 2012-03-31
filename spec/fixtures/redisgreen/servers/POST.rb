@@ -1,0 +1,1 @@
+title "Creates a new RedisGreen instance"
