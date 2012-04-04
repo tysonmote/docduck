@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 
 describe DocDuck::Manifest do
-  subject { build_manifest }
+  subject { sample_manifest }
 
   it 'parses a manifest file' do
     subject.title.should == "RedisGreen's *Cool* API"
@@ -18,10 +18,6 @@ accepts and returns JSON.</p>
 
 <p>Kickin' rad.</p>
 TXT
-    subject.order.should == [
-      "servers",
-      "users"
-    ]
     subject.dirname.should == fixture_path( "redisgreen" )
   end
 

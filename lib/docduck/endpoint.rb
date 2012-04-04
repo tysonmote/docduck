@@ -3,16 +3,17 @@ module DocDuck
   class Endpoint < Parser
     ACTIONS = %w{ POST GET PUT DELETE }
 
-    nowrap_markdown_attrs :title
+    nowrap_markdown_attrs :name
     markdown_attrs :summary
     boolean_attrs :requires_auth
-    hash_attrs :example_response
+    hash_attrs :response_body
 
     attr_reader :method, :params
 
     def initialize( path, resource )
       @method = File.basename( path, ".rb" )
       @resource = resource
+      @params = {}
       instance_eval( File.read( path ) )
     end
 
@@ -21,7 +22,6 @@ module DocDuck
     end
 
     def param( name, options = {} )
-      @params ||= {}
       opts = {
         type: "string",
         optional: false

@@ -1,5 +1,5 @@
-title "Get server status"
-summary "This endpoint allows you to get the status of a RedisGreen server."
+name "Server status"
+summary "Returns the current status of a Redis server."
 requires_auth true
 
 param "random", {
@@ -14,7 +14,7 @@ param "language", {
   summary: "Change the language of the response."
 }
 
-example_response({
+response_body({
   id: "23412345",
   running: "true"
 })

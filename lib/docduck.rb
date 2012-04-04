@@ -1,5 +1,4 @@
-require "docduck/version"
-require "jbuilder"
+require 'docduck/version'
 require 'rdiscount'
 
 module DocDuck
@@ -30,7 +29,7 @@ module DocDuck
   end
 end
 
-require "docduck/parser"
-require "docduck/manifest"
-require "docduck/endpoint"
-require "docduck/resource"
+require 'docduck/parser'
+require 'docduck/manifest'
+require 'docduck/endpoint'
+require 'docduck/resource'

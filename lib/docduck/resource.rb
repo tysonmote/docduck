@@ -19,13 +19,5 @@ module DocDuck
     def url
       @path.sub( @manifest.dirname, '' )
     end
-
-    def to_iodocs
-      Jbuilder.encode do |json|
-        json.endpoints endpoints do |json, endpoint|
-          json.name = endpoint.title
-        end
-      end
-    end
   end
 end

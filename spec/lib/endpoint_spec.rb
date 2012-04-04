@@ -2,15 +2,15 @@ require_relative '../spec_helper'
 
 describe DocDuck::Endpoint do
   subject do
-    resource = DocDuck::Resource.new( fixture_path( "redisgreen/servers/:id" ), build_manifest )
+    resource = DocDuck::Resource.new( fixture_path( "redisgreen/servers/:id" ), sample_manifest )
     resource.endpoints.find { |endpoint| endpoint.method == "GET" }
   end
 
   it "reads a endpoint file" do
     subject.method.should == "GET"
-    subject.title.should == "Get server status"
-    subject.summary.should == "This endpoint allows you to get the status of a RedisGreen server."
-    subject.example_response.should == { id: "23412345", running: "true" }
+    subject.name.should == "Server status"
+    subject.summary.should == "Returns the current status of a Redis server."
+    subject.response_body.should == { id: "23412345", running: "true" }
     subject.params.should == {
       random: {
         type: "number",

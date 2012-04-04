@@ -6,8 +6,3 @@ accepts and returns JSON.
 
 Kickin' rad.
 TXT
-
-order [
-  "servers",
-  "users",
-]

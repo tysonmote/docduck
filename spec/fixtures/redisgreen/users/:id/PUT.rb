@@ -1,12 +1,12 @@
-title "Update user information"
+name "Update user information"
 
 requires_auth true
 
-param( "name", {
+param "name", {
   type: "string",
-})
+}
 
-example_response({
+response_body({
   name: "Bob Smith",
   email: "foo@bar.com"
 })

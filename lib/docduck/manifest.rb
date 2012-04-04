@@ -3,7 +3,6 @@ module DocDuck
   class Manifest < Parser
     nowrap_markdown_attrs :title
     markdown_attrs :summary
-    array_attrs :order
 
     def initialize( path )
       @path = path

@@ -1,6 +1,6 @@
-title "Get user information"
+name "Get user information"
 requires_auth true
-example_response({
+response_body({
   name: "Bob Smith",
   email: "foo@bar.com"
 })

@@ -1,12 +1,20 @@
-title "List all your RedisGreen servers"
+name "Servers"
+summary <<-TXT
+Returns a list of your servers, ordered my creattion date, ascending.
+TXT
 requires_auth true
-example_response([
+
+response_body([
   {
     id: "23412345",
-    running: "true"
+    created_at: "2012-04-04 04:39:11 UTC",
+    label: "Production cache",
+    running: true
   },
   {
     id: "45236264",
-    running: "false"
+    created_at: "2012-01-17 13:24:15 UTC",
+    label: "Test bloom filter",
+    running: false
   }
 ])
