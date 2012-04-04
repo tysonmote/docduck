@@ -26,6 +26,5 @@ TXT
   end
 
   it 'returns the order of files to be parsed'
-  
 
 end
