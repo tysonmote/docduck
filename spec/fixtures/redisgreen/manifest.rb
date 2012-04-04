@@ -6,3 +6,6 @@ accepts and returns JSON.
 
 Kickin' rad.
 TXT
+
+resource "servers"
+resource "users"

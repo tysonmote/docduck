@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 describe DocDuck::Resource do
   subject do
-    DocDuck::Resource.new( fixture_path( "redisgreen/servers" ), sample_manifest )
+    DocDuck::Resource.new( "Servers", fixture_path( "redisgreen/servers" ), sample_manifest )
   end
 
   it "returns its endpoints" do
@@ -28,5 +28,12 @@ describe DocDuck::Resource do
     subresource.endpoints[1].name.should == "Update server"
     subresource.endpoints[2].method.should == "DELETE"
     subresource.endpoints[2].name.should == "Delete server"
+  end
+
+  it "renders HTML" do
+    pending
+    subject.to_html.should == <<-HTML
+    x
+HTML
   end
 end

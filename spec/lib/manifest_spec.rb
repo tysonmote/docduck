@@ -21,6 +21,10 @@ TXT
     subject.dirname.should == fixture_path( "redisgreen" )
   end
 
-  it 'returns the order of files to be parsed'
+  it 'has resources' do
+    subject.resources.size.should == 2
+    subject.resources[0].url.should == "/servers"
+    subject.resources[1].url.should == "/users"
+  end
 
 end

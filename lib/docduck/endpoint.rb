@@ -32,5 +32,9 @@ module DocDuck
       @params[name.to_sym] = opts
     end
 
+    def to_html
+      template = Tilt.new( File.join( TEMPLATE_ROOT, "endpoint.slim" ) )
+      template.render( self )
+    end
   end
 end
