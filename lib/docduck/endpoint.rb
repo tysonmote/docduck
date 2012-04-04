@@ -8,7 +8,7 @@ module DocDuck
     boolean_attrs :requires_auth
     hash_attrs :example_response
 
-    attr_reader :method
+    attr_reader :method, :params
 
     def initialize( path, resource )
       @method = File.basename( path, ".rb" )
@@ -19,5 +19,18 @@ module DocDuck
     def url
       @resource.url
     end
+
+    def param( name, options = {} )
+      @params ||= {}
+      opts = {
+        type: "string",
+        optional: false
+      }.merge( options )
+      if opts.key?( :summary )
+        opts[:summary] = Helpers.nowrap_markdown( opts[:summary] )
+      end
+      @params[name.to_sym] = opts
+    end
+
   end
 end

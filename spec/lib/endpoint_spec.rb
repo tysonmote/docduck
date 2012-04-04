@@ -11,6 +11,19 @@ describe DocDuck::Endpoint do
     subject.title.should == "Get server status"
     subject.summary.should == "This endpoint allows you to get the status of a RedisGreen server."
     subject.example_response.should == { id: "23412345", running: "true" }
+    subject.params.should == {
+      random: {
+        type: "number",
+        optional: false,
+        summary: "Give us a <em>random</em> number or we'll shoot this dog."
+      },
+      language: {
+        type: "string",
+        optional: true,
+        allowed: ["english", "french", "spanish"],
+        summary: "Change the language of the response."
+      }
+    }
   end
 
   it "determines the url" do

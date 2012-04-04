@@ -1,22 +1,29 @@
 require "docduck/version"
 require "jbuilder"
+require 'rdiscount'
 
 module DocDuck
   module Helpers
-    def subdirectories( path )
+    def self.subdirectories( path )
       Dir["#{path}/*"].select{ |subpath| File.directory?( subpath ) }.sort
+    end
+
+    def self.markdown( markdown )
+      RDiscount.new( markdown ).to_html.strip
+    end
+
+    def self.nowrap_markdown( markdown )
+      markdown( markdown ).gsub( /^<p>/, '' ).gsub( /<\/p>$/, '' )
     end
   end
 
   class Converter
-    include Helpers
-
     attr_reader :resources
 
     def initialize( path )
       @path = path
       @manifest = Manifest.new( File.join( @path, "manifest.rb" ) )
-      @resources = subdirectories( @path ).map do |path|
+      @resources = Helpers.subdirectories( @path ).map do |path|
         Resource.new( path, @manifest )
       end
     end

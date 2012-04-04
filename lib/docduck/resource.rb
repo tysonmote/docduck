@@ -1,8 +1,6 @@
 module DocDuck
   # A directory of endpoints.
   class Resource
-    include Helpers
-
     attr_reader :endpoints, :subresources
 
     def initialize( path, manifest )
@@ -13,7 +11,7 @@ module DocDuck
         specs << Endpoint.new( file_path, self ) if File.exists?( file_path )
         specs
       end
-      @subresources = subdirectories( @path ).sort.map do |subpath|
+      @subresources = Helpers.subdirectories( @path ).sort.map do |subpath|
         Resource.new( subpath, @manifest )
       end
     end

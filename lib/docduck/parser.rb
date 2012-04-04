@@ -1,5 +1,3 @@
-require 'rdiscount'
-
 module DocDuck
   class Parser
     class << self
@@ -23,7 +21,7 @@ module DocDuck
           string_attrs( name )
 
           define_method "#{name}_html" do
-            RDiscount.new( instance_variable_get( variable ) ).to_html.strip
+            Helpers.markdown( instance_variable_get( variable ) )
           end
         end
       end
@@ -34,8 +32,7 @@ module DocDuck
           string_attrs( name )
 
           define_method "#{name}_html" do
-            html = RDiscount.new( instance_variable_get( variable ) ).to_html.strip
-            html.gsub( /^<p>/, '' ).gsub( /<\/p>$/, '' )
+            Helpers.nowrap_markdown( instance_variable_get( variable ) )
           end
         end
       end
