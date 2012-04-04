@@ -1,4 +1,4 @@
-group :development do
+group :test do
   gem 'guard-rspec'
 end
 
