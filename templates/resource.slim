@@ -1,0 +1,9 @@
+div.docduck-resource
+  - if title
+    h1 = title
+  - endpoints.each do |endpoint|
+    == endpoint.to_html
+  - unless subresources.empty?
+    div.docduck-subresources
+      - subresources.each do |subresource|
+        == subresource.to_html

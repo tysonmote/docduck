@@ -1,0 +1,27 @@
+article.docduck-endpoint
+  h1
+    span.docduck-method = method
+    - if name
+      '
+      span.docduck-name == name_html
+    '
+    span.docduck-url = url
+
+  - if summary
+    div.docduck-summary == summary_html
+
+  - unless params.empty?
+    table.docduck-params
+      thead
+        tr
+          th Name
+          th Type
+          th Required
+          th Notes
+      tbody
+        - params.each do |name, spec|
+          tr
+            th.docduck-param-name = name
+            td.docduck-param-type = spec[:type]
+            td.docduck-param-optional = spec[:optional] ? "" : "√"
+            td.docduck-param-notes == spec[:summary]
