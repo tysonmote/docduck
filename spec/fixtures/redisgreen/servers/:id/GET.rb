@@ -1,6 +1,6 @@
 name "Server status"
 summary "Returns information about the state of a Redis database."
-requires_auth true
+auth_required true
 
 response_body({
     "id"=>15,

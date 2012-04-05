@@ -1,6 +1,6 @@
 module DocDuck
   # Read in a manifest file
-  class Manifest < Parser
+  class Manifest < Accumulator
     nowrap_markdown_attrs :title
     markdown_attrs :summary
 

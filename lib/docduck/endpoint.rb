@@ -1,11 +1,11 @@
 module DocDuck
   # POST.rb, GET.rb, PUT.rb, DELETE.rb
-  class Endpoint < Parser
+  class Endpoint < Accumulator
     ACTIONS = %w{ POST GET PUT DELETE }
 
     nowrap_markdown_attrs :name
     markdown_attrs :summary
-    boolean_attrs :requires_auth
+    boolean_attrs :auth_required
     hash_attrs :response_body
 
     attr_reader :method, :params

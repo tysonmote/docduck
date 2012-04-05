@@ -1,5 +1,5 @@
 module DocDuck
-  class Parser
+  class Accumulator
     class << self
       def string_attrs( *attrs )
         attrs.each do |name|

@@ -2,7 +2,7 @@ name "Servers"
 summary <<-TXT
 Get all of your servers.
 TXT
-requires_auth true
+auth_required true
 
 response_body([
   {

@@ -2,8 +2,10 @@
 
 REST API documentation builder.
 
-Doesn't work yet.
+Build the Redisgreen docs with:
 
-## TODO
+    guard -g development
 
-* Parser --> Accumulator... Collector... ?
+Or:
+
+    ./bin/build_redisgreen

@@ -26,7 +26,7 @@ module DocDuck
 end
 
 require_relative 'docduck/version'
-require_relative 'docduck/parser'
+require_relative 'docduck/accumulator'
 require_relative 'docduck/manifest'
 require_relative 'docduck/endpoint'
 require_relative 'docduck/resource'

@@ -1,6 +1,6 @@
 name "Create server"
 summary "Allocates and starts a new Redis instance."
-requires_auth true
+auth_required true
 
 param "name", {
   optional: true,
