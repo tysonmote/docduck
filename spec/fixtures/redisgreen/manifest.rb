@@ -8,4 +8,3 @@ Kickin' rad.
 TXT
 
 resource "servers"
-resource "users"
