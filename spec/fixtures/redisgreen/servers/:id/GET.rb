@@ -1,20 +1,15 @@
 name "Server status"
-summary "Returns the current status of a Redis server."
+summary "Returns information about the state of a Redis database."
 requires_auth true
 
-param "random", {
-  type: "number",
-  summary: "Give us a *random* number or we'll shoot this dog."
-}
-
-param "language", {
-  type: "string",
-  optional: true,
-  allowed: %w{ english french spanish },
-  summary: "Change the language of the response."
-}
-
 response_body({
-  id: "23412345",
-  running: "true"
+    "id"=>15,
+    "name"=>"my_production_db",
+    "status"=>"running",
+    "size_mb"=>128,
+    "dns"=>"api.redisgreen.net",
+    "port"=>83612,
+    "created_at"=>"2012-04-05T22:57:06Z",
+    "updated_at"=>"2012-04-05T22:57:06Z",
+    "user_id"=>11
 })

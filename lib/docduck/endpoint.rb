@@ -26,7 +26,7 @@ module DocDuck
         type: "string",
         optional: false
       }.merge( options )
-      if opts.key?( :summary )
+      if opts[:summary]
         opts[:summary] = Helpers.nowrap_markdown( opts[:summary] )
       end
       @params[name.to_sym] = opts

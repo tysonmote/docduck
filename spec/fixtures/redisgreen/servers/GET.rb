@@ -1,20 +1,30 @@
 name "Servers"
 summary <<-TXT
-Returns a list of your servers, ordered my creattion date, ascending.
+Get all of your servers.
 TXT
 requires_auth true
 
 response_body([
   {
-    id: "23412345",
-    created_at: "2012-04-04 04:39:11 UTC",
-    label: "Production cache",
-    running: true
+    "id"=>15,
+    "name"=>"my_production_db",
+    "status"=>"running",
+    "size_mb"=>128,
+    "dns"=>"api.redisgreen.net",
+    "port"=>83612,
+    "created_at"=>"2012-04-05T22:57:06Z",
+    "updated_at"=>"2012-04-05T22:57:06Z",
+    "user_id"=>11
   },
   {
-    id: "45236264",
-    created_at: "2012-01-17 13:24:15 UTC",
-    label: "Test bloom filter",
-    running: false
+    "id"=>315,
+    "name"=>"my_test_db",
+    "status"=>"launching",
+    "size_mb"=>2,
+    "dns"=>"api.redisgreen.net",
+    "port"=>88262,
+    "created_at"=>"2012-04-05T22:57:06Z",
+    "updated_at"=>"2012-04-05T22:57:06Z",
+    "user_id"=>11
   }
 ])
