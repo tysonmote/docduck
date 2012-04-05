@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'bundler'
+require_relative '../lib/docduck'
+
+puts DocDuck::Manifest.new("#{Dir.pwd}/spec/fixtures/redisgreen/manifest.rb").to_html

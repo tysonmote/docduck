@@ -1,9 +1,10 @@
 div.docduck-resource
-  - if title
-    h1 = title
+  - if name
+    header
+      h1 = name
   - endpoints.each do |endpoint|
     == endpoint.to_html
   - unless subresources.empty?
-    div.docduck-subresources
+    section.docduck-subresources
       - subresources.each do |subresource|
         == subresource.to_html

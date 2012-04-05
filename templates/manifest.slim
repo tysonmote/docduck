@@ -3,7 +3,9 @@ html
   head
     title = title
 
-  body
+  body.docduck
+    header
+      h1 == title_html
     - if summary
       div.docduck-summary == summary_html
     div.docduck-resources

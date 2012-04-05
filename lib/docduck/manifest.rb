@@ -20,5 +20,10 @@ module DocDuck
       path = File.join( dirname, directory )
       @resources << Resource.new( label, path, self )
     end
+
+    def to_html
+      template = Tilt.new( File.join( TEMPLATE_ROOT, "manifest.slim" ) )
+      template.render( self )
+    end
   end
 end

@@ -15,6 +15,8 @@ GEM
       thor (~> 0.14.6)
     guard-rspec (0.6.0)
       guard (>= 0.10.0)
+    guard-shell (0.3.0)
+      guard (>= 0.2.0)
     rdiscount (1.6.8)
     rspec (2.9.0)
       rspec-core (~> 2.9.0)
@@ -38,4 +40,5 @@ DEPENDENCIES
   docduck!
   guard
   guard-rspec
+  guard-shell
   rspec

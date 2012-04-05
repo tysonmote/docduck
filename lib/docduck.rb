@@ -1,4 +1,3 @@
-require 'docduck/version'
 require 'rdiscount'
 require 'slim'
 
@@ -26,7 +25,8 @@ module DocDuck
   end
 end
 
-require 'docduck/parser'
-require 'docduck/manifest'
-require 'docduck/endpoint'
-require 'docduck/resource'
+require_relative 'docduck/version'
+require_relative 'docduck/parser'
+require_relative 'docduck/manifest'
+require_relative 'docduck/endpoint'
+require_relative 'docduck/resource'
